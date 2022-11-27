@@ -6,7 +6,7 @@ import {
 } from "../types/todoTypes";
 
 const initialState = {
-  todoList: { id: new Date().getTime(), text: "", completed: false },
+  todoList: [{ id: new Date().getTime(), text: "", completed: false }],
 };
 
 const todoReducer = (state = initialState, { type, payload }) => {
@@ -26,3 +26,5 @@ const todoReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
+
+export default todoReducer;

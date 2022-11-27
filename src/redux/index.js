@@ -1,11 +1,13 @@
 import { combineReducers, legacy_createStore as createStore } from "redux";
 import counterReducer from "./reducers/counterReducer";
+import todoReducer from "./reducers/todoReducer";
 
 //!storenu kur
 // export const store = createStore();
 // reducer birleştirme = combineReducer()
 const rootReduce = combineReducers({
   count: counterReducer,
+  todo: todoReducer,
 });
 
 export const store = createStore(rootReduce);
