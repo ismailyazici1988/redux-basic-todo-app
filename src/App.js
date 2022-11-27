@@ -1,15 +1,23 @@
 import "./App.css";
+import { legacy_createStore as createStore } from "redux";
+import { Provider } from "react-redux";
+import Counter from "./components/Counter";
+import { reducer } from "./redux";
 
 function App() {
+  const store = createStore(reducer);
   return (
-    <div>
-      <h1 className="display-5 text-danger my-5">Counter</h1>
-      <h5 className="display-6 mb-3">Counter:0</h5>
-      <button className="btn btn-dark mx-3 btn-lg">Artır</button>
-      <button className="btn btn-danger mx-3 btn-lg">Resetle</button>
-      <button className="btn btn-dark mx-3 btn-lg">Azalt</button>
+    <div className="App">
+      <Provider store={store}>
+        <Counter />
+      </Provider>
     </div>
   );
 }
 
 export default App;
+
+//store kurma adımları
+//1. createStore() | redux
+//2. provider | react-redux
+//3. consume
