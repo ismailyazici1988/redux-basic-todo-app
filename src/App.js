@@ -3,6 +3,7 @@ import "./App.css";
 import { Provider } from "react-redux";
 import Counter from "./components/Counter";
 import { store } from "./redux";
+import Todo from "./components/todo/Todo";
 // import { reducer } from "./redux";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <Counter />
+        <Todo />
       </Provider>
     </div>
   );
